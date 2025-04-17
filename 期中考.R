@@ -15,3 +15,10 @@ sd(samsung$PriceUSA) #Samsung美國售價標準差:515.3826
 boxplot(df$PriceChina~df$Year, data=df, xlab = "年份", ylab = "中國售價", main = "Boxplot")  
 hist(df$PriceChina, xlab="中國售價", ylab="交易次數", main="Histogram")
 
+#第三題
+library(ggplot2)
+g <- ggplot(df, mapping = aes(x=Weight, y=Battery))
+g+geom_point()+ggtitle("點陣圖") + xlab("手機重量") + ylab("電池容量")
+
+ 
+
