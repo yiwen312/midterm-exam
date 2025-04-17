@@ -37,3 +37,17 @@ summary(aov2)
 #第七題
 nrow(df[df$Year==2024 & df$Company=="Apple",])/nrow(df[df$Year==2024,]) #0.12
 
+#第八題
+##8-1
+colnames(df)[1] <- "company"
+colnames(df)[2] <- "name"
+colnames(df)[3] <- "weight"
+colnames(df)[4] <- "battery"
+colnames(df)[5] <- "price.c"
+colnames(df)[6] <- "price.u"
+colnames(df)[7] <- "year"
+##8-2
+library(dplyr)
+df2<-df %>% mutate(price.t = price.u * 32)
+##8-3
+write.csv(df2,file="M136040011.csv",row.names = F)
