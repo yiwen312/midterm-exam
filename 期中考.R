@@ -20,5 +20,7 @@ library(ggplot2)
 g <- ggplot(df, mapping = aes(x=Weight, y=Battery))
 g+geom_point()+ggtitle("點陣圖") + xlab("手機重量") + ylab("電池容量")
 
- 
+#第四題
+library(car)
+leveneTest(PriceUSA~Company, data=df) #p值=5.218e-14 < 0.05，拒絕H0，表示不同廠牌中美國售價之變異數不相等
 
